@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 import os, string, shutil, re,sys
-import pefile  ##�ǵ�import pefile
+import pefile  
 
 # PEfile_Path = r"/tmp/python-3.exe"
 PEfile_Path = sys.argv[1]
@@ -23,12 +23,12 @@ for importeddll in pe.DIRECTORY_ENTRY_IMPORT:
 
     for importedapi in importeddll.imports:	
         with open(checkresult, 'a') as f:
-       # for importedapi.name in origins:
+      
             if importedapi.name in origins:
                 i=i+1
                 print importedapi.name
                 f.write((importedapi.name) + '   ')
-		print "\n"
+	print "\n"
                 
 
 
